@@ -2,12 +2,11 @@
 
 ## 개발 환경 세팅
 
-### 라이브러리 설치
+### 템플릿 설치
 
 ```
-npm install -g expo-cli
-expo init MyApp
-
+npx create-expo-app MyApp
+or
 npx react-native init MyApp --template react-native-template-typescript@6.12.10
 ```
 
@@ -52,11 +51,23 @@ sdk.dir = C:/Users/{user}/AppData/Local/
 - `<ScrollView>` / `<ScrollView>` / `<UIScrollView>` / `<div>`
 - `<TextInput>` / `<EditText>` / `<UITextField>` / `<input type="text">`
 
-### 추가 정보
+---
 
+### 네비게이션
+
+- `<StackNavigation>` : LIFO (Last-In-Fist-Out) 구조
+- `<BottomTabNavigation>` : Material UI를 통해서 제공하눈 별도 UI 제공
+- `<DrawerNavigation>` : 햄버거 메뉴 등 서랍형식
+
+### 컴포넌트
+
+**각 스크롤링 뷰의 차이**
 `<ScrollView>`는 데이터 전체를 한 번에 렌더링하지만,  
 `<FlatList>`는 화면에 보이는 요소만 렌더링  
 `<SectionList>`는 분할된 데이터 세트로 렌더링
+
+**SafeAreaView**
+`<SafeAreaView>`는 스크린 영역을 가리는 카메라 등을 고려하여 여백을 주는 뷰
 
 ```js
 <SectionList sections={[
@@ -235,59 +246,4 @@ MyApp
 │       └── utils
 │           └── format.js
 └── App.js
-```
-
-function Example() {
-return (
-<NativeBaseProvider>
-<Box
-        bg="primary.600"
-        py="4"
-        px="3"
-        borderRadius="5"
-        rounded="md"
-        width={375}
-        maxWidth="100%">
-<HStack justifyContent="space-between">
-<Box justifyContent="space-between">
-<VStack space="2">
-<Text fontSize="sm" color="white">
-Today @ 9PM
-</Text>
-<Text color="white" fontSize="xl">
-Let's talk about avatar!
-</Text>
-</VStack>
-<Pressable
-              rounded="xs"
-              bg="primary.400"
-              alignSelf="flex-start"
-              py="1"
-              px="3">
-<Text
-                textTransform="uppercase"
-                fontSize="sm"
-                fontWeight="bold"
-                color="white">
-Remind me
-</Text>
-</Pressable>
-</Box>
-<Image
-source={{
-              uri: "https://media.vanityfair.com/photos/5ba12e6d42b9d16f4545aa19/3:2/w_1998,h_1332,c_limit/t-Avatar-The-Last-Airbender-Live-Action.jpg",
-            }}
-alt="Aang flying and surrounded by clouds"
-height="100"
-rounded="full"
-width="100"
-/>
-</HStack>
-</Box>
-</NativeBaseProvider>
-);
-}
-
-```
-
 ```
