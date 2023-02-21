@@ -1,9 +1,9 @@
 import { Button } from "../Button";
 import { Icon } from "../Icon";
 
-export const HeaderIcon = ({ iconName }) => {
+export const HeaderIcon = ({ iconName, onPress }) => {
   return (
-    <Button>
+    <Button onPress={onPress}>
       <Icon name={iconName} size={28} color="black" />
     </Button>
   );

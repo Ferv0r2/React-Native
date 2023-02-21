@@ -4,12 +4,14 @@ import { BottomTabNavigation } from "./BottomTabNavigation";
 
 const Stack = createNativeStackNavigator();
 export const RootStackNavigation = () => {
-  <Stack.Navigator
-    screenOptions={{
-      headerShown: false,
-    }}
-  >
-    <Stack.Screen name="BottomTab" component={BottomTabNavigation} />
-    <Stack.Screen name="ImageDetail" component={ImageDetailScreen} />
-  </Stack.Navigator>;
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="BottomTab" component={BottomTabNavigation} />
+      <Stack.Screen name="ImageDetail" component={ImageDetailScreen} />
+    </Stack.Navigator>
+  );
 };
